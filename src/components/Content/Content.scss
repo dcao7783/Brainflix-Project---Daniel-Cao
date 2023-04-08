@@ -1,0 +1,79 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixins" as *;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AvenirNext LT Pro';
+}
+
+.content {
+    padding: 36px;
+
+    h1 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 36px;
+        padding-bottom: 2.5rem;
+    }
+
+    &__subflex {
+        font-size: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $primary-silver;
+
+
+        &--flexleft {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+
+            p {
+                color: $primary-silver;
+            }
+        }
+
+        &--flexright {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.8rem;
+                color: $primary-silver;
+
+                #viewIcon {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                img{
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+
+        }
+
+    }
+
+    &__description {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 36px;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+}

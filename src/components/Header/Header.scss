@@ -1,0 +1,140 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixins" as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AvenirNext LT Pro';
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    &__logo {
+        img {
+            width: 145px;
+        }
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 16px;
+        gap: 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            width: 60%;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 1.5rem 0.8rem;
+            border-radius: 5px;
+            border: none;
+            background-color: $primary-blue;
+            color: $primary-white;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 100%;
+            position: relative;
+
+            @include tablet {
+                width: 213px;
+            }
+
+            img {
+                position: absolute;
+                top: 11px;
+                left: 9px;
+            }
+
+        }
+
+
+        &__nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+
+
+
+            &--input {
+                position: relative;
+                width: 100%;
+
+                img {
+                    position: absolute;
+                    left: 10px;
+                    top: 12.9px;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.9rem 5rem 0.7rem 2.5rem;
+                    border-radius: 5px;
+                    border: 1px solid $primary-silver;
+                    background-color: rgba(225, 225, 225, 0.19);
+                    font-size: 16px;
+                    text-transform:capitalize;
+                    
+                    &::placeholder {
+                        color: $primary-black;
+                    }
+                }
+            }
+
+
+
+            &--img {
+                width: 46.9px;
+                height: 46.9px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: 20% 50%;
+
+
+                &-1 {
+                    @include tablet {
+                        display: none;
+                    }
+                }
+
+                &-2 {
+                    display: none;
+
+                    @include tablet {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            
+
+        }
+    }
+}
+
+

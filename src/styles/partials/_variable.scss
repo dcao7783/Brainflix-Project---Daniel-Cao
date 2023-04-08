@@ -1,0 +1,16 @@
+@use "./font" as *;
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+$primary-black: #323232;
+$primary-silver: #afafaf;
+$primary-blue: #0095ff;
+$primary-white: #fff;
+$secondary-black:#000000;
+$secondary-blue:#0065ad;
+$secondary-silver:#e1e1e1;
+$secondary-white:#fafafa;
+$opacity: 0.3;
+
+$font-stack: 'AvenirNext LT Pro', Arial, Helvetica, sans-serif;

@@ -1,0 +1,82 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixins" as *;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AvenirNext LT Pro';
+}
+
+.hero {
+    background-color: $secondary-black;
+    position: relative;
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        padding: 0 36px;
+        margin: 0;
+        vertical-align: middle;
+
+        &--buttomflex {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            bottom: 1.5rem;
+            padding: 0 62px;
+        }
+
+        &--playicon {
+            padding: 0.8rem 1.4rem 0.65rem;
+            background-color: $primary-black;
+            border-radius: 10px;
+            
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &--videobar {
+            color: $primary-white;
+            padding: 1.1rem 1.5rem;
+            background-color: $primary-black;
+            border-radius: 10px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+
+            &-bar{
+                color: $secondary-black;
+                width: 88%;
+                height: 6.5px;
+                background-color: $secondary-black;
+                border-radius: 5px;
+            }
+        }
+
+        &--cornorflex {
+            background-color: $primary-black;
+            padding: 0.5rem 1.4rem 0.35rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
+}
