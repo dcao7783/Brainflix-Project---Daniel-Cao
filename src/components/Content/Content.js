@@ -1,11 +1,11 @@
+
+import profileImg from "../../assets/Images/Mohan-muruge.jpg"
 import viewIcon from "../../assets/Icons/views.svg";
 import likeIcon from "../../assets/Icons/likes.svg";
+import commentIcon from "../../assets/Icons/add_comment.svg";
+import Display from "./Display";
 import "./Content.scss"
 
-
-// const newDate = new Date(timeConvert);
-// const option = {weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'}
-// const displayDate = newDate.toLocaleDateString(undefined, option);
 
 
 function Content({ content }) {
@@ -13,7 +13,7 @@ function Content({ content }) {
     function convertTime() {
         const timeConvert = content.timestamp;
         const newDate = new Date(timeConvert)
-        const option = {month: "2-digit", day: "2-digit", year: "numeric"}
+        const option = { month: "2-digit", day: "2-digit", year: "numeric" }
         const displayDate = newDate.toLocaleDateString(undefined, option)
 
         return displayDate
@@ -41,16 +41,20 @@ function Content({ content }) {
             <p className="content__description">{content.description}</p>
 
             <div className="comments">
-                <h4 className="comments-heading"></h4>
+                <h4 className="comments-heading">3 Comments</h4>
                 <div className="comments__container">
-                    <form className="comments__container-form">
-                        <img src="" alt=""/>
-                        <label for="comment">Join the conversation</label>
-                        <input type="text" name="comment" id="comment" placehoder="Add a new comment"/>
-                        <button type="submit"><img src="" alt=""/>comment</button>
+                    <img src={profileImg} alt="" />
+                    <form className="comments__container--form">
+                        <div className="comments__container--subflex">
+                            <label for="comment">Join the conversation</label>
+                            <input type="text" name="comment" id="comment" placeholder="Add a new comment" />
+                        </div>
+                        <button type="submit"><img src={commentIcon} alt="" />comment</button>
                     </form>
                 </div>
             </div>
+
+            <Display content={content} />
         </section>
     )
 }
