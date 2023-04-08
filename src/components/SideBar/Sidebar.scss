@@ -1,0 +1,61 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixins" as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AvenirNext LT Pro';
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 0 36px 36px;
+
+    h3 {
+        color: $primary-silver;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 700;
+    }
+
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        cursor: pointer;
+
+        img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        &--subflex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.25rem;
+            width: 50%;
+
+            h4 {
+                font-size: 28px;
+            }
+
+            span {
+                font-size: 24px;
+                line-height: 24px;
+                font-weight: 400;
+                align-self: flex-start;
+            }
+        }
+    }
+}

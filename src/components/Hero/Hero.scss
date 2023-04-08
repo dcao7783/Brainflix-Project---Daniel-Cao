@@ -14,10 +14,11 @@
 .hero {
     background-color: $secondary-black;
     position: relative;
+    overflow: hidden;
 
     &__img {
         max-width: 100%;
-        height: auto;
+        max-height: 738px;
         object-fit: cover;
         padding: 0 36px;
         margin: 0;

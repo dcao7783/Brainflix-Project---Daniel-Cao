@@ -1,5 +1,4 @@
 export function convertTime(time) {
-    // const timeConvert = content.timestamp;
     const newDate = new Date(time)
     const option = { month: "2-digit", day: "2-digit", year: "numeric" }
     const displayDate = newDate.toLocaleDateString(undefined, option)

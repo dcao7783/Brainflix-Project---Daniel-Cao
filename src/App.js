@@ -21,7 +21,7 @@ function App() {
       <Header />
       <Hero video={selectedVideos} />
       <Content content={selectedVideos}/>
-      <SideBar />
+      <SideBar videoList={videoDetails} selectVideo={handleSelectVideo}/>
     </>
   );
 }
