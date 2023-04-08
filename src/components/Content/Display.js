@@ -1,3 +1,6 @@
+import "./Display.scss";
+import {convertTime} from "../../utility";
+
 function Display({ content }) {
 
     const commentList = [];
@@ -7,12 +10,12 @@ function Display({ content }) {
         const {comment, id, name, timestamp} = content.comments[i];
 
         commentList.push(
-            <div className="displays__container" key={id}>
-                <img src="" alt="" />
-                <div className="displays__container--subflex">
-                    <div className="displays__container--subflex-top">
+            <div className="displays__items" key={id}>
+                <span className="displays__items--img"></span>
+                <div className="displays__items--subflex">
+                    <div className="displays__items--subflex-top">
                         <h4>{name}</h4>
-                        <span>{timestamp}</span>
+                        <span>{convertTime(timestamp)}</span>
                     </div>
                     <p>{comment}</p>
                 </div>
@@ -20,7 +23,7 @@ function Display({ content }) {
         )
     }
 
-    return <>{commentList}</>
+    return <div className="displays">{commentList}</div>
 
 }
 

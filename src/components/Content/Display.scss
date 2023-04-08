@@ -1,0 +1,66 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixins" as *;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AvenirNext LT Pro';
+}
+
+.displays {
+
+    &__items {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid $secondary-silver;
+        position: relative;
+
+        &--img {
+            width: 46.9px;
+            height: 46.9px;
+            background-color: $secondary-silver;
+            border-radius: 50%;
+            border: 0;
+            outline: none;
+            align-self: flex-start;
+            flex-shrink: 0;
+        }
+
+        &--subflex {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding-top: 2px;
+
+            &-top {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                h4 {
+                    font-size: 24px;
+                }
+
+                span {
+                    color: $primary-silver;
+                }
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 24px;
+                font-weight: 400;
+            }
+        }
+    }
+}

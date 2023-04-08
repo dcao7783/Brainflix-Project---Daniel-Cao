@@ -4,20 +4,12 @@ import viewIcon from "../../assets/Icons/views.svg";
 import likeIcon from "../../assets/Icons/likes.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 import Display from "./Display";
+import {convertTime} from "../../utility";
 import "./Content.scss"
 
 
 
 function Content({ content }) {
-
-    function convertTime() {
-        const timeConvert = content.timestamp;
-        const newDate = new Date(timeConvert)
-        const option = { month: "2-digit", day: "2-digit", year: "numeric" }
-        const displayDate = newDate.toLocaleDateString(undefined, option)
-
-        return displayDate
-    }
 
     return (
         <section className="content">
@@ -25,7 +17,7 @@ function Content({ content }) {
             <div className="content__subflex">
                 <div className="content__subflex--flexleft">
                     <h4>By {content.channel}</h4>
-                    <p>{convertTime()}</p>
+                    <p>{convertTime(content.timestamp)}</p>
                 </div>
                 <div className="content__subflex--flexright">
                     <p>
