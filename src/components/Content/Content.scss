@@ -145,6 +145,10 @@
             padding-top: 1rem;
             padding-bottom: 2rem;
         }
+
+        @include desktop {
+            padding-right: 36px;
+        }
     }
 
     .comments {
