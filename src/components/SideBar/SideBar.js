@@ -1,12 +1,14 @@
 
 import "./Sidebar.scss";
 
-function SideBar({videoList, selectVideo}) {
+function SideBar({videoList, selectVideo, videoSelect}) {
+
+    let updatedVideoList = videoList.filter ((video) => video.id !== videoSelect.id)
 
     return (
         <article className="sidebar">
             <h3>Next Videos</h3>
-            {videoList.map((video) => (
+            {updatedVideoList.map((video) => (
                 <div onClick={() => {selectVideo(video.id)}} key={video.id} className="sidebar__items">
                     <img src={video.image} alt=""/>
                     <div className="sidebar__items--subflex">

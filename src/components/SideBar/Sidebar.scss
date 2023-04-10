@@ -2,7 +2,9 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,47 +16,85 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 2rem;
-    padding: 0 36px 36px;
+    padding: 0 16px 16px;
+    gap: 1rem;
+
+    @include tablet {
+        gap: 1.2rem;
+        padding: 0 36px 36px;
+    }
+
+    @include desktop {
+        gap: 1rem;
+        padding: 24px 0 24px 24px;
+        border-left: 1px solid $secondary-silver;
+    }
 
     h3 {
         color: $primary-silver;
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 13px;
+        line-height: 18px;
         font-weight: 700;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
 
     &__items {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
         cursor: pointer;
 
         img {
-            width: 200px;
-            height: 120px;
+            width: 100px;
+            height: 60px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 5px;
+            flex-basis: 100px;
+
+            @include tablet {
+                width: 120px;
+                height: 70px;
+                flex-basis: 120px;
+            }
         }
 
         &--subflex {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            gap: 1.25rem;
             width: 50%;
 
+            @include tablet {
+                gap: 0.5rem;
+            }
+
             h4 {
-                font-size: 28px;
+                font-size: 13px;
+                line-height: 18px;
+                font-weight: 700;
+
+                @include tablet {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
             }
 
             span {
-                font-size: 24px;
-                line-height: 24px;
+                font-size: 13px;
+                line-height: 18px;
                 font-weight: 400;
                 align-self: flex-start;
+
+                @include tablet {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
             }
         }
     }

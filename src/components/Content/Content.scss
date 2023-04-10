@@ -12,29 +12,67 @@
 }
 
 .content {
-    padding: 36px;
+    padding: 24px 16px;
+
+    @include tablet {
+        padding: 36px 36px 24px;
+    }
+
+    @include desktop {
+        max-width: 70%;
+        padding: 24px 36px 36px 12px;
+    }
 
     h1 {
-        font-size: 48px;
+        font-size: 24px;
+        line-height: 32px;
         font-weight: 700;
-        line-height: 36px;
-        padding-bottom: 2.5rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-size: 33px;
+            font-weight: 700;
+            line-height: 44px;
+            padding-bottom: 0.7rem;
+        }
     }
 
     &__subflex {
-        font-size: 24px;
+        font-size: 13px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        padding-bottom: 2rem;
+        padding: 1rem 0;
+        border-top: 1px solid $secondary-silver;
         border-bottom: 1px solid $secondary-silver;
+        gap: 5rem;
+
+        @include tablet {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0 0.8rem;
+            border-top: none;
+            border-bottom: 1px solid $secondary-silver;
+        }
 
 
         &--flexleft {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2rem;
+            }
 
             p {
                 color: $primary-silver;
@@ -43,9 +81,19 @@
 
         &--flexright {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+
+
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2rem;
+            }
 
             p {
                 display: flex;
@@ -54,14 +102,25 @@
                 gap: 0.8rem;
                 color: $primary-silver;
 
+                @include tablet {
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
                 #viewIcon {
-                    width: 38px;
-                    height: 38px;
+
+                    @include tablet {
+                        width: 21px;
+                        height: 21px;
+                    }
                 }
 
                 img {
-                    width: 28px;
-                    height: 28px;
+
+                    @include tablet {
+                        width: 17px;
+                        height: 17px;
+                    }
                 }
             }
 
@@ -70,41 +129,92 @@
     }
 
     &__description {
-        font-size: 25px;
+        padding: 1rem 0;
+        font-size: 13px;
+        line-height: 18px;
         font-weight: 400;
-        line-height: 36px;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
+
+        @include tablet {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
     }
 
     .comments {
 
+        h4 {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 700;
+            padding-bottom: 1rem;
+
+            @include tablet {
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: 700;
+                padding-bottom: 0;
+            }
+        }
+
         &__container {
-            margin-top: 2rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid $secondary-silver;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+
+            @include tablet {
+                margin-top: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid $secondary-silver;
+            }
+
+            @include desktop {
+                padding-left: 0.5rem;
+            }
 
 
             img {
-                width: 46.9px;
-                height: 46.9px;
+                width: 36px;
+                height: 36px;
                 border-radius: 50%;
-                margin-top: 1.3rem;
                 object-fit: cover;
                 object-position: 20% 50%;
+                margin-top: 1rem;
+
+
+                @include tablet {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: 20% 50%;
+                    margin-top: 1.3rem;
+                }
             }
 
 
             &--form {
                 width: 100%;
                 display: flex;
+                flex-direction: column;
                 justify-content: flex-end;
                 align-items: center;
-                gap: 1.5rem;
+
+                @include tablet {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 1.5rem;
+                }
             }
 
             &--subflex {
@@ -116,43 +226,92 @@
 
                 label {
                     width: 100%;
-                    font-size: 20px;
+                    font-size: 13px;
+                    line-height: 18px;
                     text-transform: uppercase;
                     color: $primary-silver;
-                    font-weight: 400;
+                    font-weight: 700;
+
+                    @include tablet {
+                        width: 100%;
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        color: $primary-silver;
+                        font-weight: 700;
+                        margin-bottom: 0.2rem;
+                    }
                 }
 
                 input {
                     width: 100%;
-                    padding: 1.2rem;
-                    background-color: rgba(225, 225, 225, 0.2);
+                    padding: 0.8rem 0.8rem 4.5rem;
+                    background-color: rgba(225, 225, 225, 0.15);
                     border: 1px solid $secondary-silver;
-                    border-radius: 7px;
+                    border-radius: 5px;
+
+                    @include tablet {
+                        width: 100%;
+                        padding: 0.7rem 1rem;
+                        background-color: rgba(225, 225, 225, 0.2);
+                        border: 1px solid $secondary-silver;
+                        border-radius: 5px;
+                    }
 
                     &::placeholder {
                         color: $secondary-black;
-                        font-size: 18px;
+                        font-size: 12px;
+                        line-height: 18px;
+                        font-weight: 400;
+
+                        @include tablet {
+                            color: $secondary-black;
+                            font-size: 12px;
+                        }
                     }
                 }
             }
 
             button {
                 margin-top: 1.4rem;
-                padding: 1rem 4rem;
+                padding: 0.7rem 4rem;
                 position: relative;
-                font-size: 20px;
+                font-size: 12px;
+                width: 100%;
                 color: $primary-white;
                 text-transform: uppercase;
                 background-color: $primary-blue;
                 border: none;
-                border-radius: 7px;
+                border-radius: 4px;
+
+                @include tablet {
+                    margin-top: 1.4rem;
+                    padding: 0.81rem 4rem;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 12px;
+                    color: $primary-white;
+                    text-transform: uppercase;
+                    background-color: $primary-blue;
+                    border: none;
+                    border-radius: 5px;
+                    width: 158px;
+                }
 
                 img {
-                    width: 32px;
-                    height: 32px;
+
+                    width: 18.5px;
+                    height: 18.5px;
                     position: absolute;
-                    left: 15px;
-                    bottom: 0.8rem;
+                    left: 0.57rem;
+                    bottom: 0.57rem;
+
+                    @include tablet {
+                        position: absolute;
+                        left: 10px;
+                        bottom: 0.76rem;
+                    }
                 }
             }
         }

@@ -8,16 +8,18 @@ function Hero({ video }) {
 
     return (
         <main className="hero">
-            <img className="hero__img" src={video.image} alt="" />
-            <div className="hero__img--buttomflex">
-                <a className="hero__img--playicon" href="/"><img src={playIcon} alt="" /></a>
-                <div className="hero__img--videobar">
-                    <span className="hero__img--videobar-bar"></span>
-                    <span>0.00 / {video.duration}</span>
-                </div>
-                <div className="hero__img--cornorflex">
-                    <a className="hero__img--fullScreen" href="/"><img src={fullScreen} alt="" /></a>
-                    <a className="hero__img--volume" href="/"><img src={volume} alt="" /></a>
+            <div className="hero__container">
+                <img className="hero__img" src={video.image} alt="" />
+                <div className="hero__img--buttomflex">
+                    <a className="hero__img--playicon" href="/"><img src={playIcon} alt="" /></a>
+                    <div className="hero__img--videobar">
+                        <span className="hero__img--videobar-bar"></span>
+                        <span>0.00 / {video.duration}</span>
+                    </div>
+                    <div className="hero__img--cornorflex">
+                        <a className="hero__img--fullScreen" href="/"><img src={fullScreen} alt="" /></a>
+                        <a className="hero__img--volume" href="/"><img src={volume} alt="" /></a>
+                    </div>
                 </div>
             </div>
         </main>

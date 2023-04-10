@@ -5,24 +5,26 @@ import Content from "./components/Content/Content";
 import SideBar from "./components/SideBar/SideBar";
 import Hero from "./components/Hero/Hero";
 import videoDetails from "./data/video-details.json";
-import {useState} from 'react';
+import { useState } from 'react';
 
 function App() {
   const [selectedVideos, setSelectedVideos] = useState(videoDetails[0]);
 
   const handleSelectVideo = (selectedId) => {
     const foundVideo = videoDetails.find((video) => video.id === selectedId);
-    
-    setSelectedVideos (foundVideo);
+
+    setSelectedVideos(foundVideo);
   }
 
   return (
-    <>
+    <div className="root">
       <Header />
       <Hero video={selectedVideos} />
-      <Content content={selectedVideos}/>
-      <SideBar videoList={videoDetails} selectVideo={handleSelectVideo}/>
-    </>
+      <div className="root-desktopflex">
+        <Content content={selectedVideos} />
+        <SideBar videoSelect={selectedVideos} videoList={videoDetails} selectVideo={handleSelectVideo} />
+      </div>
+    </div>
   );
 }
 

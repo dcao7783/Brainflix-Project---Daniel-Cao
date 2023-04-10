@@ -17,20 +17,38 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 2rem;
-        padding: 2rem 0;
+        gap: 1rem;
+        padding: 1rem 0;
         border-bottom: 1px solid $secondary-silver;
         position: relative;
 
+        @include tablet {
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+        }
+
+        @include desktop {
+            padding-left: 0.5rem;
+        }
+
         &--img {
-            width: 46.9px;
-            height: 46.9px;
+            width: 36px;
+            height: 36px;
             background-color: $secondary-silver;
             border-radius: 50%;
-            border: 0;
-            outline: none;
+            border: none;
             align-self: flex-start;
             flex-shrink: 0;
+
+            @include tablet {
+                width: 40px;
+                height: 40px;
+                background-color: $secondary-silver;
+                border-radius: 50%;
+                border: none;
+                align-self: flex-start;
+                flex-shrink: 0;
+            }
         }
 
         &--subflex {
@@ -40,6 +58,10 @@
             gap: 0.5rem;
             padding-top: 2px;
 
+            @include tablet {
+                gap: 0.3rem;
+            }
+
             &-top {
                 width: 100%;
                 display: flex;
@@ -48,18 +70,35 @@
                 align-items: center;
 
                 h4 {
-                    font-size: 24px;
+                    font-size: 13px;
+                    line-height: 18px;
+                    font-weight: 700;
+
+                    @include tablet {
+                        font-size: 14px;
+                        line-height: 22px;
+                        font-weight: 700;
+                    }
                 }
 
                 span {
                     color: $primary-silver;
+                    font-size: 13px;
+                    line-height: 18px;
+                    font-weight: 400;
                 }
             }
 
             p {
-                font-size: 24px;
-                line-height: 24px;
+                font-size: 13px;
+                line-height: 18px;
                 font-weight: 400;
+
+                @include tablet {
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 400;
+                }
             }
         }
     }
