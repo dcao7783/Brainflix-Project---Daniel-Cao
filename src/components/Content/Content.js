@@ -33,12 +33,12 @@ function Content({ content }) {
             <p className="content__description">{content.description}</p>
 
             <div className="comments">
-                <h4 className="comments-heading">3 Comments</h4>
+                <h4 className="comments-heading">{content.comments.length} Comments</h4>
                 <div className="comments__container">
                     <img src={profileImg} alt="" />
                     <form className="comments__container--form">
                         <div className="comments__container--subflex">
-                            <label for="comment">Join the conversation</label>
+                            <label htmlFor="comment">Join the conversation</label>
                             <input type="text" name="comment" id="comment" placeholder="Add a new comment" />
                         </div>
                         <button type="submit"><img src={commentIcon} alt="" />comment</button>
