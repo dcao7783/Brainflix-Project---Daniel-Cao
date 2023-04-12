@@ -5,3 +5,7 @@ export function convertTime(time) {
 
     return displayDate
 }
+
+export const base__url = "https://project-2-api.herokuapp.com";
+
+export const api_key = "b3b7b1b4-c040-41d7-8347-f1cea55a73ad";

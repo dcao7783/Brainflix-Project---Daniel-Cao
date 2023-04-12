@@ -1,36 +1,25 @@
 
 import './App.scss';
 import Header from "./components/Header/Header";
-import Content from "./components/Content/Content";
-import SideBar from "./components/SideBar/SideBar";
-import Hero from "./components/Hero/Hero";
-import videoDetails from "./data/video-details.json";
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './page/Home';
+import UploadPage from './page/Upload';
+
+
 
 function App() {
-  const [selectedVideos, setSelectedVideos] = useState(videoDetails[0]);
-
-  const handleSelectVideo = (selectedId) => {
-    const foundVideo = videoDetails.find((video) => video.id === selectedId);
-
-    setSelectedVideos(foundVideo);
-  }
 
   return (
-    <div className="root">
+    <BrowserRouter>
       <Header />
-      <Hero video={selectedVideos} />
-      <div className="root-desktopflex">
-        <Content content={selectedVideos} />
-        <SideBar videoSelect={selectedVideos} videoList={videoDetails} selectVideo={handleSelectVideo} />
-      </div>
-    </div>
+      <Routes>
+      <Route path="/" element={<HomePage />}/>
+      <Route path="/upload" element={<UploadPage />}/>
+      </Routes>
+    </BrowserRouter >
   );
 }
 
 export default App;
 
 
-//control down from the APP, 
-//take the video Id from the content list and elevated up to the App(parent)
-//from there I can 
