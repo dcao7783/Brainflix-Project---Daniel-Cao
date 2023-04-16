@@ -1,0 +1,177 @@
+@use "../styles/partials/font" as *;
+@use "../styles/partials/variable" as *;
+@use "../styles/partials/mixins" as *;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AvenirNext LT Pro';
+}
+
+.upload {
+    border-top: 1px solid $secondary-silver;
+    padding-top: 3rem;
+
+    h1 {
+        @include desktop {
+            max-width: 1280px;
+            margin: auto;
+            padding-left: 24px;
+            font-size: 32px;
+            line-height: 42px;
+            font-weight: 700;
+        }
+    }
+
+    &__container {
+        margin: 24px 16px;
+        padding: 2rem 0;
+        border-top: 1px solid $secondary-silver;
+        border-bottom: 1px solid $secondary-silver;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        @include desktop {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $primary-silver;
+        }
+
+        img {
+            width: 320px;
+            height: 180px;
+            border-radius: 5px;
+
+            @include desktop {
+                width: 379px;
+                height: 193px;
+            }
+        }
+
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1rem;
+
+        @include desktop {
+          max-width: 1280px;
+          margin: auto;
+          padding: 0 24px;
+        }
+
+        &--subflex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1.75rem;
+            width: 100%;
+            padding-bottom: 2.79px;
+        }
+
+        &--inputflex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            gap: 3px;
+
+            label {
+                font-size: 13px;
+                color: $primary-silver;
+                text-transform: uppercase;
+            }
+
+            input {
+                padding: 0.8rem 1.2rem;
+                border-radius: 5px;
+                border: 1px solid $secondary-silver;
+                background-color: rgba(225, 225, 225, 0.3);
+
+                &::placeholder {
+                    color: $secondary-black;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 400;
+                }
+            }
+
+
+
+            #description {
+                padding-bottom: 4.5rem;
+            }
+        }
+
+        &--bottom {
+            align-self: flex-end;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5.35rem;
+        }
+
+        &--stay {
+            padding: 0.67rem 3.7rem;
+            background: $primary-blue;
+            color: $primary-white;
+            border: none;
+            font-size: 13px;
+            line-height: 22px;
+            font-weight: 400;
+            text-transform: uppercase;
+            border-radius: 5px;
+            position: relative;
+
+            &:hover {
+                background-color: $secondary-blue;
+            }
+
+            img {
+                position: absolute;
+                left: 10px;
+                top: 8px;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @include tablet {
+                display: inline-block;
+                background-color: transparent;
+                color: $primary-blue;
+                font-size: 13px;
+                line-height: 22px;
+                font-weight: 400;
+                border: none;
+                text-transform: uppercase;
+                padding-top: 3px;
+            }
+
+        }
+
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+}

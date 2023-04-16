@@ -20,7 +20,7 @@
 
     @include desktop {
         max-width: 70%;
-        padding: 24px 36px 36px 12px;
+        padding: 24px 0 36px 12px;
     }
 
     h1 {
@@ -55,6 +55,10 @@
             padding: 0 0 0.8rem;
             border-top: none;
             border-bottom: 1px solid $secondary-silver;
+        }
+
+        @include desktop {
+            padding-right: 36px;
         }
 
 
@@ -141,6 +145,10 @@
             padding-top: 1rem;
             padding-bottom: 2rem;
         }
+
+        @include desktop {
+            padding-right: 36px;
+        }
     }
 
     .comments {
@@ -177,6 +185,7 @@
 
             @include desktop {
                 padding-left: 0.5rem;
+                padding-right: 36px;
             }
 
 
@@ -282,6 +291,10 @@
                 background-color: $primary-blue;
                 border: none;
                 border-radius: 4px;
+
+                &:hover {
+                    background-color: $secondary-blue;
+                }
 
                 @include tablet {
                     margin-top: 1.4rem;
