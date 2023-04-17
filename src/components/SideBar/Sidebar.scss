@@ -48,6 +48,8 @@
         align-items: center;
         gap: 1rem;
         cursor: pointer;
+        text-decoration: none;
+       color: $secondary-black;
 
         img {
             width: 100px;
@@ -68,6 +70,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-decoration: none;
             width: 50%;
 
             @include tablet {
@@ -90,6 +93,7 @@
                 line-height: 18px;
                 font-weight: 400;
                 align-self: flex-start;
+                text-decoration: none;
 
                 @include tablet {
                     font-size: 14px;

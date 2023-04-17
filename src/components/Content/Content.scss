@@ -226,6 +226,14 @@
                 }
             }
 
+            &--input {
+                border-color: $secondary-blue;
+            }
+
+            &--invalid {
+                border-color: #D22D2D;
+            }
+
             &--subflex {
                 width: 100%;
                 display: flex;
