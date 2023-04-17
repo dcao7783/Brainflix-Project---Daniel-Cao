@@ -4,12 +4,33 @@ import viewIcon from "../../assets/Icons/views.svg";
 import likeIcon from "../../assets/Icons/likes.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 import Display from "./Display";
-import {convertTime} from "../../utility";
+import { convertTime } from "../../utility";
+import { useEffect, useState } from "react";
 import "./Content.scss"
+import axios from "axios";
+import { base_url, api_key } from "../../utility";
 
 
 
 function Content({ content }) {
+
+    const [inputEl, setInputEl] = useState("")
+
+    // useEffect (
+    //     axios.post(`${base_url}/videos/${id}?api_key=${api_key}`)
+    // )
+
+    const handleChangeInputEl = (event) => {
+        setInputEl(event.target.value)
+    }
+    
+    const validInput = () => {
+        if (inputEl === "") {
+            return false
+        }
+        return true;
+    }
+
 
     return (
         <section className="content">
@@ -39,7 +60,8 @@ function Content({ content }) {
                     <form className="comments__container--form">
                         <div className="comments__container--subflex">
                             <label htmlFor="comment">Join the conversation</label>
-                            <input type="text" name="comment" id="comment" placeholder="Add a new comment" />
+                            <input onChange={handleChangeInputEl} type="text" name="comment" id="comment" placeholder="Add a new comment" value={inputEl} className={`${validInput() ? "comments__container--input" : "comments__container--invalid"
+                                }`} />
                         </div>
                         <button type="submit"><img src={commentIcon} alt="" />comment</button>
                     </form>
@@ -53,8 +75,3 @@ function Content({ content }) {
 
 export default Content
 
-//parent(content) should pass props then pass to the hero
-//then parent component should control what to display to the top\
-//need a onClick for the divs, then need to pass in a parameter to the parents
-//passing the prop function as parameter to retrieve the video Id
-//define the onClick function in the app, and pass the video id to the parent

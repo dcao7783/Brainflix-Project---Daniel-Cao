@@ -58,6 +58,7 @@
             align-items: flex-start;
             gap: 0.5rem;
             padding-top: 2px;
+            width: 100%;
 
             @include tablet {
                 gap: 0.3rem;

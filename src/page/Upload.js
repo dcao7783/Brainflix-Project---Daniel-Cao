@@ -1,6 +1,7 @@
 import uploadVideo from "../assets/Images/Upload-video-preview.jpg";
 import publishIcon from "../assets/Icons/publish.svg";
 import "./Upload.scss"
+import { Link } from "react-router-dom";
 function UploadPage() {
 
     const altDescription = "uploadVideoImg"
@@ -27,7 +28,7 @@ function UploadPage() {
                 </div>
                 <div className="upload__form--bottom">
                     <button className="upload__form--desktop" type="reset">Cancel</button>
-                    <button className="upload__form--stay" type="submit"><img src={publishIcon} alt=""/>Publish</button>
+                    <Link to="/"><button className="upload__form--stay" type="submit"><img src={publishIcon} alt=""/>Publish</button></Link>
                     <button className="upload__form--mobile" type="reset">Cancel</button>
                 </div>
             </form>
