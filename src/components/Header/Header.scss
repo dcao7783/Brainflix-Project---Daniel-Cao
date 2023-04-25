@@ -2,15 +2,6 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .header {
     display: flex;
     flex-direction: column;
@@ -154,12 +145,15 @@
             &--button {
                 text-decoration: none;
                 width: 100%;
+                margin: 0;
 
                 @include tablet {
-                    width: 258px;
+                    width: 242px;
                 }
+
                 @include desktop {
-                    width: 201px;
+                    width: 242px;
+                    margin-right: 20px;
                 }
             }
 

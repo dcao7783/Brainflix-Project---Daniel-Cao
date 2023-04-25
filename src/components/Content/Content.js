@@ -5,32 +5,11 @@ import likeIcon from "../../assets/Icons/likes.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 import Display from "./Display";
 import { convertTime } from "../../utility";
-import { useEffect, useState } from "react";
 import "./Content.scss"
-import axios from "axios";
-import { base_url, api_key } from "../../utility";
 
 
 
-function Content({ content }) {
-
-    const [inputEl, setInputEl] = useState("")
-
-    // useEffect (
-    //     axios.post(`${base_url}/videos/${id}?api_key=${api_key}`)
-    // )
-
-    const handleChangeInputEl = (event) => {
-        setInputEl(event.target.value)
-    }
-    
-    const validInput = () => {
-        if (inputEl === "") {
-            return false
-        }
-        return true;
-    }
-
+function Content({ content, submitComment, deleteComment, updateComment }) {
 
     return (
         <section className="content">
@@ -56,19 +35,23 @@ function Content({ content }) {
             <div className="comments">
                 <h4 className="comments-heading">{content.comments.length} Comments</h4>
                 <div className="comments__container">
-                    <img src={profileImg} alt="" />
-                    <form className="comments__container--form">
+                    <img src={profileImg} alt="profile-img" />
+                    <form className="comments__container--form" onSubmit={(e) => {
+                        e.preventDefault()
+                        const input = e.target.comment.value;
+                        submitComment(input, content.id)
+                        e.target.comment.value = "";
+                    }}>
                         <div className="comments__container--subflex">
                             <label htmlFor="comment">Join the conversation</label>
-                            <input onChange={handleChangeInputEl} type="text" name="comment" id="comment" placeholder="Add a new comment" value={inputEl} className={`${validInput() ? "comments__container--input" : "comments__container--invalid"
-                                }`} />
+                            <input type="text" name="comment" id="comment" placeholder="Add a new comment" required />
                         </div>
                         <button type="submit"><img src={commentIcon} alt="" />comment</button>
                     </form>
                 </div>
             </div>
 
-            <Display content={content} />
+            <Display content={content} deleteComment={deleteComment} updateComment={updateComment} />
         </section>
     )
 }

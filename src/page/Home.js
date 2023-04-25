@@ -5,7 +5,7 @@ import Hero from "../components/Hero/Hero";
 import './Home.scss';
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { base_url, api_key } from "../utility";
+
 import { useParams } from "react-router-dom";
 
 function HomePage({ arrVideos }) {
@@ -15,10 +15,37 @@ function HomePage({ arrVideos }) {
 
     const [video, setVideo] = useState(null);
 
+    const submitComment = (comment, id) => {
+        axios.post(`http://localhost:8080/videos/${id}/comments`, {comment:comment, id:id}).then(response => {
+            axios.get(`http://localhost:8080/videos/${id}`).then(response=>{
+                setVideo(response.data)
+            })
+        })
+        console.log(id)
+    }
+
+    const updateComment = (commentId) => {
+        const vidId = id || arrVideos[0].id
+        axios.put(`http://localhost:8080/videos/${vidId}/comments/${commentId}/like`).then(response=>{
+            axios.get(`http://localhost:8080/videos/${vidId}`).then(response=>{
+                setVideo(response.data)
+            })
+        })
+    }
+
+    const deleteComment = (commentId) => {
+        const vidId = id || arrVideos[0].id
+        axios.delete(`http://localhost:8080/videos/${vidId}/comments/${commentId}`).then(response=>{
+            axios.get(`http://localhost:8080/videos/${vidId}`).then(response=>{
+                setVideo(response.data)
+            })
+        })
+    }
+
     useEffect(() => {
         if (id) {
             axios
-                .get(`${base_url}/videos/${id}?api_key=${api_key}`)
+                .get(`http://localhost:8080/videos/${id}`)
                 .then(response => {
                     console.log(response.data)
                     setVideo(response.data)
@@ -26,16 +53,16 @@ function HomePage({ arrVideos }) {
                 }).catch(e => console.log(e))
         } else {
             console.log('no id!!')
-            if (arrVideos){
+            if (arrVideos) {
 
                 console.log(arrVideos[0].id)
                 axios
-                .get(`${base_url}/videos/${arrVideos[0].id}?api_key=${api_key}`)
-                .then(response => {
-                    console.log(response.data)
-                    setVideo(response.data)
+                    .get(`http://localhost:8080/videos/${arrVideos[0].id}`)
+                    .then(response => {
+                        console.log(response.data)
+                        setVideo(response.data)
 
-                }).catch(e => console.log(e))
+                    }).catch(e => console.log(e))
 
             }
         }
@@ -51,7 +78,7 @@ function HomePage({ arrVideos }) {
         <>
             <Hero video={video} />
             <div className="root-desktopflex">
-                <Content content={video} />
+                <Content content={video} submitComment={submitComment} deleteComment={deleteComment} updateComment={updateComment} />
                 <SideBar arrVideos={arrVideos} selectedVideo={video} />
             </div>
         </>

@@ -2,15 +2,6 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -49,7 +40,7 @@
         gap: 1rem;
         cursor: pointer;
         text-decoration: none;
-       color: $secondary-black;
+        color: $secondary-black;
 
         img {
             width: 100px;

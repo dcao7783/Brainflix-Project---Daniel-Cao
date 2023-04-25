@@ -2,15 +2,6 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .displays {
 
     &__items {
@@ -62,6 +53,42 @@
 
             @include tablet {
                 gap: 0.3rem;
+            }
+
+            &-topright {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.7rem;
+
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.7rem;
+                }
+
+                li {
+                    display: inline-block;
+                    list-style: none;
+                    font-size: 13px;
+                    vertical-align: middle;
+                    color: $primary-silver;
+                }
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                    vertical-align: top;
+                    color: $secondary-silver;
+                    opacity: 0.3;
+
+                    &:hover {
+                        background-color: $secondary-silver;
+                        padding: 1px;
+                        border-radius: 2px;
+                    }
+                }
             }
 
             &-top {

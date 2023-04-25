@@ -2,31 +2,24 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .hero {
     background-color: $secondary-black;
 
     &__container {
-        height: 183px;
+        display: flex;
+        justify-content: center;
+        height: 14rem;
         position: relative;
         overflow: hidden;
 
         @include tablet {
             background-color: $secondary-black;
-            height: 427px;
+            height: 28rem;
             overflow: hidden;
         }
 
         @include desktop {
-            height: 523px;
+            height: 38rem;
             max-width: 1150px;
             margin: 0 auto;
         }
@@ -35,6 +28,7 @@
     &__img {
         width: 100%;
         height: 100%;
+        max-width: 900px;
         object-fit: cover;
         aspect-ratio: 16/9;
         vertical-align: middle;
@@ -49,6 +43,12 @@
             aspect-ratio: 16/9;
         }
 
+        @include desktop {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
         &--buttomflex {
             position: absolute;
             width: 100%;
@@ -57,10 +57,12 @@
             align-items: center;
             bottom: 0.75rem;
             padding: 0 16px;
+            gap: 0.39rem;
 
             @include tablet {
                 position: absolute;
                 width: 100%;
+                max-width: 900px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -68,12 +70,16 @@
                 padding: 0 47px;
                 gap: 0.8rem;
             }
+            @include desktop {
+                max-width: 1080px;
+                padding: 0 1.2rem;
+            }
         }
 
         &--playicon {
             padding: 0.2rem 0.5rem;
             background-color: $primary-black;
-            border-radius: 5px;
+            border-radius: 3px;
             opacity: 0.7;
 
             @include tablet {
@@ -98,10 +104,10 @@
             color: $primary-white;
             padding: 0.25rem 0.5rem;
             background-color: $primary-black;
-            border-radius: 5px;
-            width: 73%;
+            border-radius: 3px;
+            width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             opacity: 0.7;
             gap: 0.5rem;
@@ -128,7 +134,7 @@
 
             &-bar {
                 color: $secondary-black;
-                width: 75%;
+                width: 80%;
                 height: 2px;
                 background-color: $secondary-black;
                 border-radius: 5px;
@@ -149,7 +155,7 @@
             align-items: center;
             padding: 0.05rem 0.2rem;
             background-color: $primary-black;
-            border-radius: 5px;
+            border-radius: 3px;
             opacity: 0.7;
             gap: 0.7rem;
 

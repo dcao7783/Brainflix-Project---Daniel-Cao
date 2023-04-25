@@ -2,15 +2,6 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .content {
     padding: 24px 16px;
 
@@ -208,6 +199,14 @@
                 }
             }
 
+            &--input {
+                border-color: $secondary-blue;
+            }
+
+            &--invalid {
+                border-color: #D22D2D;
+            }
+
 
             &--form {
                 width: 100%;
@@ -226,13 +225,6 @@
                 }
             }
 
-            &--input {
-                border-color: $secondary-blue;
-            }
-
-            &--invalid {
-                border-color: #D22D2D;
-            }
 
             &--subflex {
                 width: 100%;
@@ -272,6 +264,11 @@
                         background-color: rgba(225, 225, 225, 0.2);
                         border: 1px solid $secondary-silver;
                         border-radius: 5px;
+                    }
+
+                    &:focus-visible {
+                        border: 2px solid $primary-blue;
+                        outline: none;
                     }
 
                     &::placeholder {
