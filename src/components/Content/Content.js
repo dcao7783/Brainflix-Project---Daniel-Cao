@@ -5,13 +5,12 @@ import likeIcon from "../../assets/Icons/likes.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 import Display from "./Display";
 import { convertTime } from "../../utility";
-import { useState } from "react";
 import "./Content.scss"
-import axios from "axios";
 
 
 
-function Content({ content, submitComment }) {
+function Content({ content, submitComment, deleteComment, updateComment }) {
+    
 
     return (
         <section className="content">
@@ -42,6 +41,7 @@ function Content({ content, submitComment }) {
                         e.preventDefault()
                         const input = e.target.comment.value;
                         submitComment(input, content.id)
+                        e.target.comment.value="";
                     }}>
                         <div className="comments__container--subflex">
                             <label htmlFor="comment">Join the conversation</label>
@@ -52,7 +52,7 @@ function Content({ content, submitComment }) {
                 </div>
             </div>
 
-            <Display content={content} />
+            <Display content={content} deleteComment={deleteComment} updateComment={updateComment} />
         </section>
     )
 }

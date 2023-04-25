@@ -2,15 +2,6 @@
 @use "../styles/partials/variable" as *;
 @use "../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .upload {
     border-top: 1px solid $secondary-silver;
     padding-top: 3rem;
@@ -157,11 +148,11 @@
         }
 
         &--bottom {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                padding: 0 16px;
-                gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 0 16px;
+            gap: 2rem;
 
             @include tablet {
                 align-self: flex-end;
@@ -176,7 +167,7 @@
                 width: 100%;
 
                 @include tablet {
-                    display:  flex;
+                    display: flex;
                     text-transform: none;
                 }
             }
@@ -241,6 +232,7 @@
             border: none;
             text-transform: uppercase;
             padding-top: 3px;
+
             @include tablet {
                 display: none;
             }

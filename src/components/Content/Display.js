@@ -3,14 +3,15 @@ import { convertTime } from "../../utility";
 import likeIcon from "../../assets/Icons/like.png";
 import deleteIcon from "../../assets/Icons/delete.png";
 
-function Display({ content }) {
+function Display({ content, deleteComment, updateComment }) {
 
     const commentList = [];
 
     for (let i = 0; i < content.comments.length; i++) {
 
-        const { comment, id, name, timestamp } = content.comments[i];
-
+        const { comment, id, name, timestamp, likes} = content.comments[i];
+        console.log(content.comments[i])
+    
         commentList.push(
             <div className="displays__items" key={id}>
                 <span className="displays__items--img"></span>
@@ -19,8 +20,12 @@ function Display({ content }) {
                         <h4>{name}</h4>
                         <div className="displays__items--subflex-topright">
                             <ul>
-                                <li><img src={likeIcon} alt="like"/>10</li>
-                                <li><img src={deleteIcon} alt="delete"/></li>
+                                <li onClick={()=>{
+                                    updateComment(id)
+                                }}><img src={likeIcon} alt="like"/>{likes}</li>
+                                <li onClick={()=>{
+                                    deleteComment(id)
+                                }}><img src={deleteIcon} alt="delete"/></li>
                             </ul>
                             <span>{convertTime(timestamp)}</span>
                         </div>

@@ -2,15 +2,6 @@
 @use "../../styles/partials/variable" as *;
 @use "../../styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'AvenirNext LT Pro';
-}
-
 .content {
     padding: 24px 16px;
 
@@ -276,7 +267,7 @@
                     }
 
                     &:focus-visible {
-                        border:  2px solid $primary-blue;
+                        border: 2px solid $primary-blue;
                         outline: none;
                     }
 

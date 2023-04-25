@@ -24,6 +24,24 @@ function HomePage({ arrVideos }) {
         console.log(id)
     }
 
+    const updateComment = (commentId) => {
+        const vidId = id || arrVideos[0].id
+        axios.put(`http://localhost:8080/videos/${vidId}/comments/${commentId}/like`).then(response=>{
+            axios.get(`http://localhost:8080/videos/${vidId}`).then(response=>{
+                setVideo(response.data)
+            })
+        })
+    }
+
+    const deleteComment = (commentId) => {
+        const vidId = id || arrVideos[0].id
+        axios.delete(`http://localhost:8080/videos/${vidId}/comments/${commentId}`).then(response=>{
+            axios.get(`http://localhost:8080/videos/${vidId}`).then(response=>{
+                setVideo(response.data)
+            })
+        })
+    }
+
     useEffect(() => {
         if (id) {
             axios
@@ -60,7 +78,7 @@ function HomePage({ arrVideos }) {
         <>
             <Hero video={video} />
             <div className="root-desktopflex">
-                <Content content={video} submitComment={submitComment} />
+                <Content content={video} submitComment={submitComment} deleteComment={deleteComment} updateComment={updateComment} />
                 <SideBar arrVideos={arrVideos} selectedVideo={video} />
             </div>
         </>
