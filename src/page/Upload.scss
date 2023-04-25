@@ -161,15 +161,7 @@
                 justify-content: flex-end;
                 align-items: center;
                 gap: 5.35rem;
-            }
-
-            Link {
-                width: 100%;
-
-                @include tablet {
-                    display: flex;
-                    text-transform: none;
-                }
+                padding: 0;
             }
         }
 
@@ -232,6 +224,7 @@
             border: none;
             text-transform: uppercase;
             padding-top: 3px;
+            text-align: center;
 
             @include tablet {
                 display: none;

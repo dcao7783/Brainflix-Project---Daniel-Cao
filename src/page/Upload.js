@@ -45,9 +45,9 @@ function UploadPage({ updateVideos }) {
                     </div>
                 </div>
                 <div className="upload__form--bottom">
-                    <Link to="/"><button className="upload__form--desktop" type="reset">Cancel</button></Link>
+                    <button onClick={()=>navigate('/')} className="upload__form--desktop" type="reset">Cancel</button>
                     <button className="upload__form--stay" type="submit"><img src={publishIcon} alt="" />Publish</button>
-                    <Link to="/"><button className="upload__form--mobile" type="reset">Cancel</button></Link>
+                    <button button onClick={()=>navigate('/')} className="upload__form--mobile" type="reset">Cancel</button>
                 </div>
             </form>
         </div>
