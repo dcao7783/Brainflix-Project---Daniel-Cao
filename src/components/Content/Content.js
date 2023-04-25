@@ -10,7 +10,6 @@ import "./Content.scss"
 
 
 function Content({ content, submitComment, deleteComment, updateComment }) {
-    
 
     return (
         <section className="content">
@@ -41,7 +40,7 @@ function Content({ content, submitComment, deleteComment, updateComment }) {
                         e.preventDefault()
                         const input = e.target.comment.value;
                         submitComment(input, content.id)
-                        e.target.comment.value="";
+                        e.target.comment.value = "";
                     }}>
                         <div className="comments__container--subflex">
                             <label htmlFor="comment">Join the conversation</label>

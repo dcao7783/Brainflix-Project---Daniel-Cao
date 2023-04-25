@@ -22,7 +22,7 @@ function Display({ content, deleteComment, updateComment }) {
                             <ul>
                                 <li onClick={()=>{
                                     updateComment(id)
-                                }}><img src={likeIcon} alt="like"/>{likes}</li>
+                                }}><img src={likeIcon} alt="like"/> {likes}</li>
                                 <li onClick={()=>{
                                     deleteComment(id)
                                 }}><img src={deleteIcon} alt="delete"/></li>
